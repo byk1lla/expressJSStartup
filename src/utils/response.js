@@ -39,8 +39,25 @@ class Response{
         return res.status(401).json({
             success:false,
             data:this.data,
-            message:this.message ?? "İşlem Başarısız!"
+            message:this.message ?? "Lütfen Oturum Açın!"
+        })
+    }
+    error404(res){
+        return res.status(404).json({
+            success:false,
+            data:this.data,
+            message:this.message ?? "Bilinmeyen Bir İşlem!"
+        })
+    }
+    error429(res){
+        return res.status(429).json({
+            success:false,
+            data:this.data,
+            message:this.message ?? "Çok Fazla İşlem Yaptınız!"
         })
     }
 
  }
+
+
+ module.exports = Response;
