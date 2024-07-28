@@ -11,7 +11,8 @@ const errorHandlerMiddleWare = (err,req,res,next) => {
     return res.status(500)
         .json({
             success:false,
-            message:"Sanırım Bir Karışıklık Oluştu?!🤔 Lütfen API'yi Kontrol edin!"
+            message:"Sanırım Bir Karışıklık Oluştu?!🤔 Lütfen API'yi Kontrol edin!",
+            error:err
         });
 }
 

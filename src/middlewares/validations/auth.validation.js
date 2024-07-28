@@ -70,6 +70,8 @@ class authValidation{
                 throw new APIError(error?.details[0].message,400)
             }else throw new APIError("Lütfen İçeriği Doğru bir şekilde gönderiniz.",400)
         }
+
+        next();
     }
 }
 
