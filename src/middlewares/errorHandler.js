@@ -8,12 +8,15 @@ const errorHandlerMiddleWare = (err,req,res,next) => {
                 message:err.message
             })
     }
+    console.log("An Error Occured:", err);
     return res.status(500)
         .json({
             success:false,
             message:"Sanırım Bir Karışıklık Oluştu?!🤔 Lütfen API'yi Kontrol edin!",
             error:err
         });
+
+    
 }
 
 module.exports = errorHandlerMiddleWare
